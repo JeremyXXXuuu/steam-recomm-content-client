@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "https://steam-game-recomm-content.herokuapp.com/recom";
+const url = "https://steam-game-recomm-content.herokuapp.com/recom/recom";
 export const getAll = (page) => axios.get(`${url}?page=${page}`);
 
 export const get = (id) => axios.get(`${url}/${id}`);

@@ -47,13 +47,15 @@ const Games = () => {
   const [pageCount, setPageCount] = useState(0);
   const [gameDetails, setGameDetails] = useState([]);
   const [url, setUrl] = useState(
-    `https://steam-game-recomm-content.herokuapp.com?name=`
+    `https://steam-game-recomm-content.herokuapp.com/recom?name=`
   );
   const { data, error } = useSWR(url, fetcher);
 
   const findByGame = () => {
     setSearchGame(search);
-    setUrl(`https://steam-game-recomm-content.herokuapp.com?name=${search}`);
+    setUrl(
+      `https://steam-game-recomm-content.herokuapp.com/recom?name=${search}`
+    );
   };
 
   const onChangeSearchGame = (e) => {
@@ -63,7 +65,7 @@ const Games = () => {
 
   const pageChange = (value) => {
     setUrl(
-      `https://steam-game-recomm-content.herokuapp.com?name=${search}&page=${value}`
+      `https://steam-game-recomm-content.herokuapp.com/recom?name=${search}&page=${value}`
     );
   };
   if (error) return "An error has occurred.";

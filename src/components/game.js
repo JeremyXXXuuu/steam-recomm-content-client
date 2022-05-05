@@ -46,7 +46,7 @@ const theme = createTheme();
 
 export default function Game() {
   const { id } = useParams();
-  const url = `https://steam-game-recomm-content.herokuapp.com/recomm/${id}`;
+  const url = `https://steam-game-recomm-content.herokuapp.com/recom/recomm/${id}`;
   const { data, error } = useSWR(url, fetcher);
   const initialGameState = {
     id: null,

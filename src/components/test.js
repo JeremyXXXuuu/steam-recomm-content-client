@@ -10,7 +10,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Test = () => {
   const { id } = useParams();
-  const url = `https://steam-game-recomm-content.herokuapp.com/recomm/${id}`;
+  const url = `https://steam-game-recomm-content.herokuapp.com/recom/recomm/${id}`;
   const { data, error } = useSWR(url, fetcher);
   const initialGameState = {
     id: null,
